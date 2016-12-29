@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hand.mapper.FilmMapper">
+    <resultMap id="filmMap" type="com.hand.bean.Film">
+        <id column="language_id" property="id" javaType="java.lang.Integer"/>
+        <result column="title" property="title" javaType="java.lang.String"/>
+        <result column="description" property="description" javaType="java.lang.String"/>
+
+    </resultMap>
+    <insert id="addFilm" useGeneratedKeys="true" keyProperty="id">
+        insert into film(title,description,language_id) values(#{title},#{description},#{language_id});
+    </insert>
+
+</mapper>
